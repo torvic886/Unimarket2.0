@@ -118,7 +118,7 @@ public class Usuario implements Serializable {
 	}
 
 
-	//prueba 27-04-23....
+	//prueba 27-04-23..............
 	
 
 }
