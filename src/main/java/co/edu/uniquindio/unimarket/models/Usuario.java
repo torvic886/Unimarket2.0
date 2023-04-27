@@ -118,5 +118,4 @@ public class Usuario implements Serializable {
 	}
 
 
-	//27-04-23s
 }
