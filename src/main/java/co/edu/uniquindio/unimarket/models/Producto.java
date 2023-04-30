@@ -195,6 +195,6 @@ public class Producto implements Serializable{
 	
 	
 
-
+//prueba desde sts4 github
 
 }
