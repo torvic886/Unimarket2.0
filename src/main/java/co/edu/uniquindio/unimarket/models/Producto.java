@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 //import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -44,7 +45,11 @@ public class Producto implements Serializable{
 	private String disponibilidad;
 	
     @Column(name="fecha_limite")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date fechaLimite;
+    
+    @Column(name = "estado")       
+	private String estado;
 	  
 	
 	@ManyToOne
@@ -67,7 +72,7 @@ public class Producto implements Serializable{
 	
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_comentario")
+    @JoinColumn(name = "id_producto")
     private List<Comentario> comentarios;	
 	
 //	public Comentario getComentario() {
@@ -177,6 +182,18 @@ public class Producto implements Serializable{
 	public void setEstadoProducto(EstadoProducto estadoProducto) {
 		this.estadoProducto = estadoProducto;
 	}
+
+
+	public String getEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
+	
 
 
 
